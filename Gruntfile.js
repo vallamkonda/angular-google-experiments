@@ -1,5 +1,19 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
+            app1: {
+                files:{
+                    'googleExperiments.js': [
+                        'src/googleExperimentsModule.js',
+                        'src/googleExperimentsDirective.js',
+                        'src/googleExperimentsProvider.js'
+                    ]
+                }
+            }
+        },
         uglify: {
             options: {
                 mangle: false
@@ -15,6 +29,9 @@ module.exports = function(grunt) {
             }
         }
     });
+
+    grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['uglify']);
+
+    grunt.registerTask('default', ['ngAnnotate','uglify']);
 };

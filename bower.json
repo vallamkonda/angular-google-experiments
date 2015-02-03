@@ -6,7 +6,7 @@
     "Rudolf Olah <omouse@gmail.com>"
   ],
   "description": "Angular module that interfaces with Google Analytics Experiments, change your content dynamically.",
-  "main": "googleExperiments.min.js",
+  "main": "googleExperiments.js",
   "keywords": [
     "angular",
     "google",
@@ -23,6 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.16"
+    "angular": "~1.2.16",
+    "angular-load": "eaguerralde/angular-load#~0.2.0"
   }
 }
