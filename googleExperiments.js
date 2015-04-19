@@ -28,16 +28,6 @@ angular.module('googleExperiments').provider(
 
         this.$get = ['$q', '$timeout', 'angularLoad', function($q, $timeout, angularLoad) {
             var variationDeferred = $q.defer();
-            // dynamically load external javascript file and wait for it to load
-            //var s = document.createElement('script');
-            //$timeout(function() {
-            //    console.log('resolving: ' + cxApi.chooseVariation());
-            //    variationDeferred.resolve(cxApi.chooseVariation());
-            //}, 1000, false);
-            //
-            //s.async = false;
-            //s.src = '//www.google-analytics.com/cx/api.js?experiment=' + this.config.experimentId;
-            //angular.element('body').append(s);
 
             angularLoad.loadScript('//www.google-analytics.com/cx/api.js?experiment=' + this.config.experimentId).then(function() {
                 variationDeferred.resolve(cxApi.chooseVariation());
