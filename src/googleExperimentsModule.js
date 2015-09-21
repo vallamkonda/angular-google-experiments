@@ -1,1 +1,1 @@
-angular.module('googleExperiments', []);
+angular.module('googleExperiments', ['angularLoad']);
