@@ -6,6 +6,7 @@ angular.module('googleExperiments').directive(
             scope.$watch(attr.variation, function googleExperimentsVariationWatchAction(value) {
                 googleExperiments.getVariation().then(function (variation) {
                     if (variation == value) {
+                        console.log("hello vamshi");
                         element.removeClass('ng-cloak');
                         element.removeClass('ng-hide');
                     } else {
